@@ -1,3 +1,11 @@
+.app {
+  @apply flex flex-col h-screen justify-between;
+}
+
+.container {
+  @apply mt-1 mb-auto;
+}
+
 .test {
-  @apply text-center
+  @apply text-red-400
 }
