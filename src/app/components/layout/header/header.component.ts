@@ -1,5 +1,5 @@
-import { Location } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
@@ -26,7 +26,7 @@ export class HeaderComponent implements OnInit {
 
   }
 
-  toggleMobileMenu () {
+  toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
