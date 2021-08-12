@@ -1,4 +1,6 @@
+import { Location } from '@angular/common';
 import { Component, HostListener, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -6,12 +8,19 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor() {
-
+  constructor(location: Location, router: Router) {
+    router.events.subscribe(() => {
+      const path = location.path();
+      if (path !== this.currentRoute) {
+        this.currentRoute = path;
+        if (this.mobileMenuOpen) this.mobileMenuOpen = false;
+      }
+    });
   }
 
-  private clickedInside = false;
+  public currentRoute: string = '';
   public mobileMenuOpen = false;
+  private clickedInside = false;
 
   ngOnInit(): void {
 
@@ -33,5 +42,4 @@ export class HeaderComponent implements OnInit {
     }
     this.clickedInside = false;
   }
-
 }

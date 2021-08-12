@@ -35,22 +35,22 @@
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
-            <a href="#" class="nav-link-active" aria-current="page">Posts</a>
-            <a href="#" class="nav-link">Users</a>
-            <a href="#" class="nav-link">Albums</a>
-            <a href="#" class="nav-link">Todos</a>
+            <a routerLink="/posts" [ngClass]="currentRoute == '/posts' ? 'nav-link-active' : 'nav-link'">Posts</a>
+            <a routerLink="/users" [ngClass]="currentRoute == '/users' ? 'nav-link-active' : 'nav-link'">Users</a>
+            <a routerLink="/albums" [ngClass]="currentRoute == '/albums' ? 'nav-link-active' : 'nav-link'">Albums</a>
+            <a routerLink="/todos" [ngClass]="currentRoute == '/todos' ? 'nav-link-active' : 'nav-link'">Todos</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="sm:hidden" id="mobile-menu" *ngIf="mobileMenuOpen">
+  <div class="sm:hidden" id="mobile-menu" [class.hidden]="!mobileMenuOpen">
     <div class="px-2 pt-2 pb-3 space-y-1">
-      <a href="#" class="nav-link-active" aria-current="page">Posts</a>
-      <a href="#" class="nav-link">Users</a>
-      <a href="#" class="nav-link">Albums</a>
-      <a href="#" class="nav-link">Todos</a>
+      <a routerLink="/posts" class="block" [ngClass]="currentRoute == '/posts' ? 'nav-link-active' : 'nav-link'">Posts</a>
+      <a routerLink="/users" class="block" [ngClass]="currentRoute == '/users' ? 'nav-link-active' : 'nav-link'">Users</a>
+      <a routerLink="/albums" class="block" [ngClass]="currentRoute == '/albums' ? 'nav-link-active' : 'nav-link'">Albums</a>
+      <a routerLink="/todos" class="block" [ngClass]="currentRoute == '/todos' ? 'nav-link-active' : 'nav-link'">Todos</a>
     </div>
   </div>
 </nav>

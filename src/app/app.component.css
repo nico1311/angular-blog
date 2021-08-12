@@ -5,7 +5,3 @@
 .container {
   @apply mt-1 mb-auto;
 }
-
-.test {
-  @apply text-red-400
-}
