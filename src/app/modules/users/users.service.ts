@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import type { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +17,12 @@ export class UsersService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
 
-  getAllUsers() {
-    return this.http.get(this.url);
+  getAllUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.url);
+  }
+
+  getUser(id: number): Observable<User> {
+    return this.http.get<User>(`${this.url}/${id}`);
   }
 
   handleError() {

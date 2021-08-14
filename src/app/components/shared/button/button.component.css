@@ -1,0 +1,12 @@
+.btn {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  transition: 0.5s;
+}
+
+.btn:hover {
+  @apply bg-blue-700;
+}
+
+.btn:active {
+  @apply shadow-lg;
+}
