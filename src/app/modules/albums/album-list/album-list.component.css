@@ -1,0 +1,12 @@
+.album {
+  @apply my-2 px-2 py-3 rounded-md shadow-md flex;
+  transition: 0.5s;
+}
+
+.album:hover {
+  @apply shadow-lg
+}
+
+.album-title {
+  @apply flex-1 self-center;
+}

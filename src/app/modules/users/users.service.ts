@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
+import { BASE_URL } from '../../constants'
 import type { User } from './user';
 
 @Injectable({
@@ -12,7 +13,7 @@ export class UsersService {
 
   }
 
-  private url = 'https://jsonplaceholder.typicode.com/users';
+  private url = `${BASE_URL}/users`;
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };

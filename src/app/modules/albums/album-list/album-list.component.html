@@ -1,1 +1,16 @@
-<p>album-list works!</p>
+<h2 class="text-4xl border-b-2 pb-1 mb-2">Albums</h2>
+
+<ul *ngIf="albums?.length; else loading" class="album-list">
+  <li *ngFor="let album of albums" class="album">
+    <div class="album-title">
+      {{album.title}}
+    </div>
+    <div class="album-actions">
+      <app-button [link]="'/albums/' + album.id">Details</app-button>
+    </div>
+  </li>
+</ul>
+
+<ng-template #loading>
+  <div>loading...</div>
+</ng-template>

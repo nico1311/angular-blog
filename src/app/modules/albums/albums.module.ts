@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { routing } from './albums-routing.module';
 
+import { SharedModule } from '../../components/shared/shared.module';
+
 import { AlbumListComponent } from './album-list/album-list.component';
 
 @NgModule({
@@ -11,7 +13,8 @@ import { AlbumListComponent } from './album-list/album-list.component';
   ],
   imports: [
     CommonModule,
-    routing
+    routing,
+    SharedModule
   ],
   exports: [
     AlbumListComponent
