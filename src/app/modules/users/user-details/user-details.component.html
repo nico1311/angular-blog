@@ -1,0 +1,46 @@
+<h2 class="text-4xl border-b-2 pb-1 mb-2">User details</h2>
+<div class="my-2">
+  <a class="text-blue-400 cursor-pointer hover:underline" (click)="goBack()">&lt; Back</a>
+</div>
+
+<div *ngIf="user; else loading" class="user-details">
+  <div>
+    <h2 class="text-2xl mb-1">Personal info</h2>
+    <div class="flex gap-6">
+      <div class="flex flex-col">
+        <span class="font-bold">Name</span>
+        <span class="font-bold">E-mail</span>
+        <span class="font-bold">Phone</span>
+        <span class="font-bold">Website</span>
+      </div>
+      <div class="flex flex-col">
+        <span>{{user.name}}</span>
+        <span>{{user.email}}</span>
+        <span>{{user.phone}}</span>
+        <span class="text-blue-400 hover:underline"><a [href]="'https://' + user.website" target="_blank">{{user.website}}</a></span>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h2 class="text-2xl mb-1">Company</h2>
+    <div class="flex gap-6">
+      <div class="flex flex-col">
+        <span class="font-bold">Name</span>
+        <span class="font-bold">Catchphrase</span>
+      </div>
+      <div class="flex flex-col">
+        <span>{{user.company.name}}</span>
+        <span>{{user.company.catchPhrase}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex flex-wrap mb-2 gap-6 sm:gap-4">
+    <app-button link="/posts" [params]="{userId: user.id}">View posts</app-button>
+        <app-button link="/albums" [params]="{userId: user.id}">View albums</app-button>
+    <app-button link="/todos" [params]="{userId: user.id}">View todos</app-button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>loading...</p>
+</ng-template>

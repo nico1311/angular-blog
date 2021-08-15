@@ -8,8 +8,9 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ButtonComponent implements OnInit {
   constructor() { }
 
-  @Input() link: string = '';
-  @Input() variant: string = '';
+  @Input() link?: string;
+  @Input() params?: Record<string, unknown>;
+  @Input() variant?: string;
 
   ngOnInit(): void {
   }
