@@ -6,10 +6,14 @@ import { routing } from './albums-routing.module';
 import { SharedModule } from '../../components/shared/shared.module';
 
 import { AlbumListComponent } from './album-list/album-list.component';
+import { AlbumDetailsComponent } from './album-details/album-details.component';
+import { AlbumGalleryComponent } from './album-gallery/album-gallery.component';
 
 @NgModule({
   declarations: [
-    AlbumListComponent
+    AlbumListComponent,
+    AlbumDetailsComponent,
+    AlbumGalleryComponent
   ],
   imports: [
     CommonModule,

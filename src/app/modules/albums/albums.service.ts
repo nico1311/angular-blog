@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { BASE_URL } from '../../constants';
 import type { Album } from './album';
+import type { Photo } from './photo';
 
 @Injectable({
   providedIn: 'root'
@@ -26,5 +27,9 @@ export class AlbumsService {
 
   getAlbum(id: number): Observable<Album> {
     return this.http.get<Album>(`${this.url}/${id}`);
+  }
+
+  getAlbumPhotos(id: number): Observable<Photo[]> {
+    return this.http.get<Photo[]>(`${this.url}/${id}/photos`);
   }
 }

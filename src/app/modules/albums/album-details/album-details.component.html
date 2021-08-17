@@ -1,0 +1,28 @@
+<h2 class="text-4xl border-b-2 pb-1 mb-2">Album details</h2>
+<div class="my-2">
+  <a class="text-blue-400 cursor-pointer hover:underline" (click)="goBack()">&lt; Back</a>
+</div>
+
+<div *ngIf="album" class="flex flex-col gap-4 p-2 shadow-md">
+  <div class="flex gap-6">
+    <div class="flex flex-col">
+      <span class="font-bold">Title</span>
+      <span class="font-bold">ID</span>
+      <span class="font-bold">User ID</span>
+    </div>
+    <div class="flex flex-col">
+      <span>{{album.title}}</span>
+      <span>{{album.id}}</span>
+      <span>{{album.userId}}</span>
+    </div>
+  </div>
+  <div class="flex flex-wrap mb-2 gap-6 sm:gap-4">
+    <app-button [link]="'/albums/' + album.id + '/gallery'">View photos</app-button>
+    <app-button [link]="'/users/' + album.userId">User profile</app-button>
+  </div>
+</div>
+
+<ng-template #loading>
+  <p>loading...</p>
+</ng-template>
+

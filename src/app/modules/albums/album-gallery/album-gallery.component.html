@@ -1,0 +1,13 @@
+<h2 class="text-4xl border-b-2 pb-1 mb-2">Album gallery</h2>
+<div class="my-2">
+  <a class="text-blue-400 cursor-pointer hover:underline" (click)="goBack()">&lt; Back</a>
+</div>
+
+<div *ngIf="photos" class="grid justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-2">
+  <div *ngFor="let photo of photos" class="photo-card max-w-xs rounded overflow-hidden shadow-lg">
+    <img class="w-full" [src]="photo.url" [alt]="photo.title">
+    <div class="px-6 py-4">
+      <div class="font-bold text-xl mb-2">{{photo.title}}</div>
+    </div>
+  </div>
+</div>
