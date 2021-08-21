@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { routing } from './todos-routing.module';
 
@@ -11,6 +12,7 @@ import { TodoListComponent } from './todo-list/todo-list.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     routing
   ],
   exports: [

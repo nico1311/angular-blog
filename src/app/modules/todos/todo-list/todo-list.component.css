@@ -1,0 +1,12 @@
+.todo {
+  @apply my-2 px-2 py-3 rounded-md shadow-md;
+  transition: 0.5s;
+}
+
+.todo:hover {
+  @apply shadow-lg
+}
+
+.todo-title {
+  @apply self-center;
+}

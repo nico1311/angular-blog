@@ -1,1 +1,13 @@
-<p>todo-list works!</p>
+<h2 class="text-4xl border-b-2 pb-1 mb-2">Todos</h2>
+
+<ul *ngIf="todos?.length; else loading" class="todo-list">
+  <li *ngFor="let todo of todos" class="todo">
+    <label class="inline-flex items-center mt-3">
+      <input type="checkbox" name="completed" class="form-checkbox h-5 w-5 text-blue-600 cursor-pointer" [(ngModel)]="todo.completed" (change)="toggleCompletion(todo.id)"><span class="ml-2 text-gray-700">{{todo.title}}</span>
+    </label>
+  </li>
+</ul>
+
+<ng-template #loading>
+  <div>loading...</div>
+</ng-template>
