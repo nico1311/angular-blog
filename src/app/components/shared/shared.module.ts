@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router'
+import { RouterModule } from '@angular/router';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { ButtonComponent } from './button/button.component';
 
@@ -8,9 +9,11 @@ import { ButtonComponent } from './button/button.component';
     ButtonComponent
   ],
   imports: [
-    RouterModule
+    RouterModule,
+    FontAwesomeModule
   ],
   exports: [
+    FontAwesomeModule,
     ButtonComponent
   ]
 })
