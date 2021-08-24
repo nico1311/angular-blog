@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 import { BASE_URL } from '../../constants';
-import type { Post } from './post';
+import type { Post, Comment } from './post';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,10 @@ export class PostsService {
 
   getPost(id: number): Observable<Post> {
     return this.http.get<Post>(`${this.url}/${id}`);
+  }
+
+  getPostComments(id: number): Observable<Comment[]> {
+    return this.http.get<Comment[]>(`${this.url}/${id}/comments`);
   }
 
   getPostsByUser(userId: number): Observable<Post[]> {

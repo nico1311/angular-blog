@@ -8,6 +8,10 @@
     </div>
   </div>
   <div *ngIf="isOpen" class="p-2">
-    comments
+    <ul *ngIf="comments">
+      <li *ngFor="let comment of comments" class="bg-blue-200 my-2 p-2 rounded">
+        <span class="font-bold">{{comment.name}}</span> &lt;<span class="italic">{{comment.email}}</span>&gt;: {{comment.body}}
+      </li>
+    </ul>
   </div>
 </div>
